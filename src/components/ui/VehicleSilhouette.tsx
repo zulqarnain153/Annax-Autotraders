@@ -39,7 +39,7 @@ export function VehicleSilhouette({
   className,
   angle = "hero",
 }: VehicleSilhouetteProps) {
-  const hueShift = (seed * 37) % 40; // subtle per-vehicle variation, staying in the orange/amber family
+  const hueShift = (seed * 17) % 18; // subtle per-vehicle variation, staying in the gold/amber family
   const path = bodyPaths[bodyType] ?? bodyPaths.Saloon;
   const gradientId = `spotlight-${seed}-${angle}`;
   const isInterior = angle === "interior";
@@ -54,7 +54,7 @@ export function VehicleSilhouette({
       {/* Blueprint grid texture */}
       <svg className="absolute inset-0 h-full w-full opacity-[0.07]" aria-hidden="true">
         <pattern id={`grid-${seed}-${angle}`} width="24" height="24" patternUnits="userSpaceOnUse">
-          <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#8B93A6" strokeWidth="0.5" />
+          <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A3A3AA" strokeWidth="0.5" />
         </pattern>
         <rect width="100%" height="100%" fill={`url(#grid-${seed}-${angle})`} />
       </svg>
@@ -63,7 +63,7 @@ export function VehicleSilhouette({
       <div
         className="absolute left-1/2 top-1/3 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
         style={{
-          background: `radial-gradient(circle, hsla(${18 + hueShift}, 100%, 55%, 0.35), transparent 70%)`,
+          background: `radial-gradient(circle, hsla(${40 + hueShift}, 75%, 55%, 0.35), transparent 70%)`,
         }}
       />
 
@@ -76,7 +76,7 @@ export function VehicleSilhouette({
           <defs>
             <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#F7F8FA" />
-              <stop offset="100%" stopColor="#8B93A6" />
+              <stop offset="100%" stopColor="#A3A3AA" />
             </linearGradient>
           </defs>
           {/* Ground reflection */}
@@ -87,23 +87,23 @@ export function VehicleSilhouette({
           <path
             d={path}
             fill="none"
-            stroke="#0B1428"
+            stroke="#08080A"
             strokeWidth="2"
             opacity="0.4"
           />
           {/* Wheels */}
-          <circle cx="92" cy="140" r="18" fill="#0B1428" stroke="#FF4612" strokeWidth="2" />
-          <circle cx="224" cy="140" r="18" fill="#0B1428" stroke="#FF4612" strokeWidth="2" />
-          <circle cx="92" cy="140" r="7" fill="#1C2C4F" />
-          <circle cx="224" cy="140" r="7" fill="#1C2C4F" />
+          <circle cx="92" cy="140" r="18" fill="#08080A" stroke="#C9A227" strokeWidth="2" />
+          <circle cx="224" cy="140" r="18" fill="#08080A" stroke="#C9A227" strokeWidth="2" />
+          <circle cx="92" cy="140" r="7" fill="#28282C" />
+          <circle cx="224" cy="140" r="7" fill="#28282C" />
         </svg>
       ) : (
         <svg viewBox="0 0 320 160" className="relative h-2/3 w-2/3" aria-hidden="true">
-          <rect x="30" y="40" width="260" height="90" rx="10" fill="#131F3D" stroke="#8B93A6" strokeWidth="1.5" />
-          <rect x="50" y="55" width="90" height="55" rx="6" fill="#0B1428" stroke="#FF4612" strokeWidth="1.5" />
-          <circle cx="220" cy="75" r="22" fill="none" stroke="#FFD204" strokeWidth="2" />
-          <circle cx="220" cy="75" r="4" fill="#FFD204" />
-          <line x1="160" y1="60" x2="160" y2="115" stroke="#8B93A6" strokeWidth="1" />
+          <rect x="30" y="40" width="260" height="90" rx="10" fill="#1C1C1F" stroke="#A3A3AA" strokeWidth="1.5" />
+          <rect x="50" y="55" width="90" height="55" rx="6" fill="#08080A" stroke="#C9A227" strokeWidth="1.5" />
+          <circle cx="220" cy="75" r="22" fill="none" stroke="#E4C567" strokeWidth="2" />
+          <circle cx="220" cy="75" r="4" fill="#E4C567" />
+          <line x1="160" y1="60" x2="160" y2="115" stroke="#A3A3AA" strokeWidth="1" />
         </svg>
       )}
 

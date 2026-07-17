@@ -39,13 +39,14 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-plate-white py-24">
+    <section className="bg-navy-950 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Why Annax"
           title="Why Choose Annax Auto Traders"
           description="We built our reputation on honesty — here's what that looks like in practice."
           align="center"
+          light
         />
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -56,15 +57,15 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
-              className="group rounded-2xl border border-navy-950/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
+              className="group rounded-2xl border border-white/10 bg-navy-900 p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-ignition/40"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-ignition-gradient text-white shadow-glow transition-transform duration-300 group-hover:scale-110">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-ignition-gradient text-navy-950 shadow-glow transition-transform duration-300 group-hover:scale-110">
                 <reason.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 font-display text-xl font-bold uppercase text-navy-950">
+              <h3 className="mt-5 font-display text-xl font-bold uppercase text-white">
                 {reason.title}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-steel-500">
+              <p className="mt-2 font-body text-sm leading-relaxed text-steel-400">
                 {reason.description}
               </p>
             </motion.div>

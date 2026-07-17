@@ -33,7 +33,7 @@ export default function SellYourCarPage() {
               <div className="mt-8 space-y-5">
                 {points.map((p) => (
                   <div key={p.title} className="flex gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ignition-gradient text-white shadow-glow">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ignition-gradient text-navy-950 shadow-glow">
                       <p.icon className="h-5 w-5" />
                     </div>
                     <div>

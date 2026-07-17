@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <div key={member.name} className="rounded-2xl border border-white/10 bg-navy-950 p-6 text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-ignition-gradient text-white">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-ignition-gradient text-navy-950">
                   <Users className="h-8 w-8" />
                 </div>
                 <h3 className="mt-4 font-display text-base font-bold uppercase text-white">

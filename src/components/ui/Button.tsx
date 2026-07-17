@@ -22,7 +22,7 @@ interface ButtonProps extends BaseProps {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-ignition-gradient text-white shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5",
+    "bg-ignition-gradient text-navy-950 shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5",
   secondary:
     "bg-plate-gradient text-navy-950 shadow-card hover:-translate-y-0.5",
   outline:

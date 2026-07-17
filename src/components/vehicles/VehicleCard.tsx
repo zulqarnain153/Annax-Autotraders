@@ -17,6 +17,7 @@ import { Vehicle } from "@/lib/types";
 import { VehicleSilhouette } from "@/components/ui/VehicleSilhouette";
 import { PlateBadge } from "@/components/ui/PlateBadge";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useCompare } from "@/hooks/useCompare";
 import { formatPrice, formatMileage, cn } from "@/lib/utils";
@@ -27,14 +28,16 @@ export function VehicleCard({ vehicle, index = 0 }: { vehicle: Vehicle; index?: 
   const [slide, setSlide] = useState(0);
   const { isSaved, toggle: toggleWishlist, mounted: wMounted } = useWishlist();
   const { isComparing, toggle: toggleCompare, isFull, mounted: cMounted } = useCompare();
+  const hasRealPhotos = !!vehicle.images && vehicle.images.length > 0;
+  const slideCount = hasRealPhotos ? vehicle.images!.length : angles.length;
 
   const next = (e: React.MouseEvent) => {
     e.preventDefault();
-    setSlide((s) => (s + 1) % angles.length);
+    setSlide((s) => (s + 1) % slideCount);
   };
   const prev = (e: React.MouseEvent) => {
     e.preventDefault();
-    setSlide((s) => (s - 1 + angles.length) % angles.length);
+    setSlide((s) => (s - 1 + slideCount) % slideCount);
   };
 
   return (
@@ -43,16 +46,30 @@ export function VehicleCard({ vehicle, index = 0 }: { vehicle: Vehicle; index?: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-navy-900 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-navy-900 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-ignition/40 hover:shadow-glow"
     >
       <Link href={`/vehicle/${vehicle.slug}`} className="relative block aspect-[4/3] overflow-hidden">
-        <VehicleSilhouette bodyType={vehicle.bodyType} seed={vehicle.silhouetteSeed} angle={angles[slide]} />
+        <div className="h-full w-full transition-transform duration-500 ease-out group-hover:scale-105">
+          {hasRealPhotos ? (
+            <Image
+              src={vehicle.images![slide]}
+              alt={`${vehicle.make} ${vehicle.model}`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              loading="lazy"
+              className="object-cover"
+            />
+          ) : (
+            <VehicleSilhouette bodyType={vehicle.bodyType} seed={vehicle.silhouetteSeed} angle={angles[slide]} />
+          )}
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         {vehicle.status !== "In Stock" && (
           <span
             className={cn(
               "absolute left-3 top-3 rounded-full px-3 py-1 font-display text-xs font-bold uppercase tracking-wide",
-              vehicle.status === "Just Arrived" && "bg-ignition-gradient text-white",
+              vehicle.status === "Just Arrived" && "bg-ignition-gradient text-navy-950",
               vehicle.status === "Reserved" && "bg-plate-gradient text-navy-950",
               vehicle.status === "Sold" && "bg-steel-500 text-white"
             )}
@@ -77,9 +94,9 @@ export function VehicleCard({ vehicle, index = 0 }: { vehicle: Vehicle; index?: 
         </button>
 
         <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
-          {angles.map((a, i) => (
+          {Array.from({ length: slideCount }).map((_, i) => (
             <span
-              key={a}
+              key={i}
               className={cn(
                 "h-1.5 rounded-full transition-all",
                 i === slide ? "w-4 bg-ignition" : "w-1.5 bg-white/40"
@@ -91,13 +108,13 @@ export function VehicleCard({ vehicle, index = 0 }: { vehicle: Vehicle; index?: 
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-2">
-          <div>
-            <h3 className="font-display text-lg font-bold uppercase leading-tight text-white">
+          <div className="min-w-0 flex-1">
+            <h3 className="truncate font-display text-lg font-bold uppercase leading-tight text-white">
               {vehicle.make} {vehicle.model}
             </h3>
-            <p className="font-body text-sm text-steel-400">{vehicle.variant}</p>
+            <p className="truncate font-body text-sm text-steel-400">{vehicle.variant}</p>
           </div>
-          <div className="flex gap-1.5">
+          <div className="flex shrink-0 gap-1.5">
             <button
               onClick={() => toggleWishlist(vehicle.id)}
               aria-label="Save to wishlist"
@@ -126,18 +143,18 @@ export function VehicleCard({ vehicle, index = 0 }: { vehicle: Vehicle; index?: 
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 gap-y-2 font-body text-xs text-steel-400">
-          <span className="flex items-center gap-1.5">
-            <Calendar className="h-3.5 w-3.5 text-ignition-400" /> {vehicle.year}
+        <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 font-body text-xs text-steel-400">
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Calendar className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {vehicle.year}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Gauge className="h-3.5 w-3.5 text-ignition-400" /> {formatMileage(vehicle.mileage)}
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Gauge className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {formatMileage(vehicle.mileage)}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Fuel className="h-3.5 w-3.5 text-ignition-400" /> {vehicle.fuelType}
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Fuel className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {vehicle.fuelType}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Cog className="h-3.5 w-3.5 text-ignition-400" /> {vehicle.transmission}
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Cog className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {vehicle.transmission}
           </span>
         </div>
 

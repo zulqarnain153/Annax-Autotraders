@@ -85,10 +85,10 @@ export function FinanceCalculator({ initialPrice = 20000 }: { initialPrice?: num
 
       <div className="mt-6 grid grid-cols-2 gap-3">
         <div className="rounded-xl bg-ignition-gradient p-4 text-center">
-          <p className="font-body text-[10px] uppercase tracking-wider text-white/80">
+          <p className="font-body text-[10px] uppercase tracking-wider text-navy-950/70">
             Monthly Payment
           </p>
-          <p className="mt-1 font-display text-2xl font-bold text-white">
+          <p className="mt-1 font-display text-2xl font-bold text-navy-950">
             {formatPrice(Math.round(monthly))}
           </p>
         </div>

@@ -28,7 +28,7 @@ export function PartExchangeTeaser() {
                 key={step.title}
                 className="glass flex items-center gap-4 rounded-2xl p-5"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ignition-gradient font-display text-sm font-bold text-white">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ignition-gradient font-display text-sm font-bold text-navy-950">
                   {i + 1}
                 </span>
                 <div>

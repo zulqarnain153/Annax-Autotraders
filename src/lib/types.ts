@@ -42,6 +42,9 @@ export interface Vehicle {
     detail: string;
   }[];
   silhouetteSeed: number;
+  /** Optional real photos, e.g. ["/vehicles/bmw-3-series-2022/1-front.jpg", ...].
+   *  When present, these are shown instead of the generated silhouette. */
+  images?: string[];
   createdAt: string;
 }
 

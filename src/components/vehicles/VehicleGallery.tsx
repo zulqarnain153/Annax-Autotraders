@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { RotateCw } from "lucide-react";
 import { Vehicle } from "@/lib/types";
 import { VehicleSilhouette } from "@/components/ui/VehicleSilhouette";
@@ -15,8 +16,46 @@ const angles: Array<{ key: "hero" | "front" | "side" | "rear" | "interior"; labe
 ];
 
 export function VehicleGallery({ vehicle }: { vehicle: Vehicle }) {
+  const hasRealPhotos = !!vehicle.images && vehicle.images.length > 0;
+  const [activeIndex, setActiveIndex] = useState(0);
   const [active, setActive] = useState<(typeof angles)[number]["key"] | "360">("hero");
 
+  // ─── Real photo mode ───────────────────────────────────────────────
+  if (hasRealPhotos) {
+    const images = vehicle.images!;
+    return (
+      <div>
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-navy-900">
+          <Image
+            src={images[activeIndex]}
+            alt={`${vehicle.make} ${vehicle.model} — photo ${activeIndex + 1} of ${images.length}`}
+            fill
+            priority={activeIndex === 0}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
+
+        <div className="mt-4 flex gap-2 overflow-x-auto">
+          {images.map((src, i) => (
+            <button
+              key={src}
+              onClick={() => setActiveIndex(i)}
+              aria-label={`View photo ${i + 1}`}
+              className={cn(
+                "relative aspect-[4/3] w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-colors",
+                activeIndex === i ? "border-ignition" : "border-white/10 opacity-60 hover:opacity-100"
+              )}
+            >
+              <Image src={src} alt="" fill sizes="80px" className="object-cover" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Generated-silhouette fallback mode (no real photos yet) ───────
   return (
     <div>
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10">

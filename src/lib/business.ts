@@ -14,9 +14,9 @@ export const business = {
   founded: 2016,
 
   contact: {
-    phone: "+44 1784 000 000",
-    phoneDisplay: "01784 000 000",
-    whatsapp: "441784000000",
+    phone: "+44 7440 416033",
+    phoneDisplay: "07440 416033",
+    whatsapp: "447440416033",
     email: "info@annaxautotraders.co.uk",
     salesEmail: "sales@annaxautotraders.co.uk",
   },
@@ -66,10 +66,10 @@ export const business = {
   },
 
   stats: [
-    { label: "Cars Sold", value: 1400, suffix: "+" },
+    { label: "Cars Sold", value: 1200, suffix: "+" },
     { label: "Years Trading", value: 9, suffix: "" },
     { label: "Google Rating", value: 4.9, suffix: "/5" },
-    { label: "Happy Customers", value: 1200, suffix: "+" },
+    { label: "Happy Customers", value: 1000, suffix: "+" },
   ],
 
   reviewsSummary: {

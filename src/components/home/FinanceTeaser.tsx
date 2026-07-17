@@ -112,10 +112,10 @@ export function FinanceTeaser() {
             </div>
 
             <div className="mt-8 rounded-2xl bg-ignition-gradient p-6 text-center">
-              <p className="font-body text-xs uppercase tracking-wider text-white/80">
+              <p className="font-body text-xs uppercase tracking-wider text-navy-950/70">
                 Estimated Monthly Payment
               </p>
-              <p className="mt-1 font-display text-4xl font-bold text-white">
+              <p className="mt-1 font-display text-4xl font-bold text-navy-950">
                 {formatPrice(Math.round(monthly))}
                 <span className="text-lg font-normal">/mo</span>
               </p>

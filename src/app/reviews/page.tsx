@@ -37,7 +37,7 @@ export default function ReviewsPage() {
               </p>
               <div className="mt-2 flex justify-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-5 w-5" fill="#FFD204" stroke="#FFD204" />
+                  <Star key={i} className="h-5 w-5" fill="#E4C567" stroke="#E4C567" />
                 ))}
               </div>
               <p className="mt-2 font-body text-xs text-steel-400">
@@ -49,7 +49,7 @@ export default function ReviewsPage() {
               {distribution.map((d) => (
                 <div key={d.stars} className="flex items-center gap-3">
                   <span className="w-3 font-body text-xs text-steel-400">{d.stars}</span>
-                  <Star className="h-3.5 w-3.5" fill="#FFD204" stroke="#FFD204" />
+                  <Star className="h-3.5 w-3.5" fill="#E4C567" stroke="#E4C567" />
                   <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/10">
                     <div className="h-full rounded-full bg-ignition-gradient" style={{ width: `${d.pct}%` }} />
                   </div>
@@ -75,7 +75,7 @@ export default function ReviewsPage() {
               <div key={review.id} className="rounded-2xl border border-white/10 bg-navy-900 p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ignition-gradient font-display text-sm font-bold text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ignition-gradient font-display text-sm font-bold text-navy-950">
                       {review.name.charAt(0)}
                     </div>
                     <div>
@@ -89,8 +89,8 @@ export default function ReviewsPage() {
                     <Star
                       key={s}
                       className="h-3.5 w-3.5"
-                      fill={s < review.rating ? "#FFD204" : "none"}
-                      stroke={s < review.rating ? "#FFD204" : "#8B93A6"}
+                      fill={s < review.rating ? "#E4C567" : "none"}
+                      stroke={s < review.rating ? "#E4C567" : "#84848C"}
                     />
                   ))}
                 </div>

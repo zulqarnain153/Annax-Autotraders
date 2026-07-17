@@ -8,28 +8,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // ─── Premium dark charcoal base (was navy) ───────────────────
         navy: {
-          950: "#060B16",
-          900: "#0B1428",
-          800: "#131F3D",
-          700: "#1C2C4F",
-          600: "#2A3D68",
+          950: "#08080A",
+          900: "#131315",
+          800: "#1C1C1F",
+          700: "#28282C",
+          600: "#38383D",
         },
+        // ─── Gold accent (was "ignition" orange — kept the token name
+        // so every existing component picks up the new colour, but it's
+        // the brand gold now, not orange) ──────────────────────────────
         ignition: {
-          DEFAULT: "#FF4612",
-          600: "#E63A0A",
-          500: "#FF4612",
-          400: "#FF6B3D",
+          DEFAULT: "#C9A227",
+          600: "#A6821D",
+          500: "#C9A227",
+          400: "#E4C567",
         },
+        // ─── UK number-plate motif — kept as real plate yellow/blue,
+        // used sparingly (reg lookup, price plates) ─────────────────
         plate: {
           yellow: "#FFD204",
           white: "#F7F8FA",
           band: "#0B3D91",
         },
+        // ─── Silver / platinum secondary text (was steel blue-grey) ──
         steel: {
-          300: "#B7BECC",
-          400: "#8B93A6",
-          500: "#6B7386",
+          300: "#D9D9DD",
+          400: "#A3A3AA",
+          500: "#84848C",
+        },
+        // ─── Aliases for clarity in new code — same values as above ──
+        charcoal: {
+          950: "#08080A",
+          900: "#131315",
+          800: "#1C1C1F",
+          700: "#28282C",
+        },
+        gold: {
+          DEFAULT: "#C9A227",
+          light: "#E4C567",
+          dark: "#A6821D",
+        },
+        silver: {
+          DEFAULT: "#C7C9CD",
+          400: "#9EA1A8",
         },
       },
       fontFamily: {
@@ -37,14 +60,14 @@ const config: Config = {
         body: ["var(--font-inter)", "sans-serif"],
       },
       backgroundImage: {
-        "navy-radial": "radial-gradient(circle at 30% 20%, #1C2C4F 0%, #060B16 65%)",
-        "ignition-gradient": "linear-gradient(135deg, #FF4612 0%, #E63A0A 100%)",
+        "navy-radial": "radial-gradient(circle at 30% 20%, #28282C 0%, #08080A 65%)",
+        "ignition-gradient": "linear-gradient(135deg, #E4C567 0%, #A6821D 100%)",
         "plate-gradient": "linear-gradient(135deg, #FFD204 0%, #F2C300 100%)",
       },
       boxShadow: {
-        glow: "0 0 40px rgba(255, 70, 18, 0.25)",
-        "glow-lg": "0 0 80px rgba(255, 70, 18, 0.2)",
-        card: "0 8px 30px rgba(6, 11, 22, 0.35)",
+        glow: "0 0 40px rgba(201, 162, 39, 0.25)",
+        "glow-lg": "0 0 80px rgba(201, 162, 39, 0.2)",
+        card: "0 8px 30px rgba(0, 0, 0, 0.45)",
       },
       borderRadius: {
         plate: "6px",

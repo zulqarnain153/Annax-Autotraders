@@ -79,19 +79,19 @@ function SoldCard({ vehicle, index }: { vehicle: SoldVehicle; index: number }) {
         </h3>
         <p className="font-body text-sm text-steel-400">{vehicle.variant}</p>
 
-        <div className="mt-4 grid grid-cols-2 gap-y-2 font-body text-xs text-steel-400">
-          <span className="flex items-center gap-1.5">
-            <Gauge className="h-3.5 w-3.5 text-ignition-400" />
+        <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 font-body text-xs text-steel-400">
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Gauge className="h-3.5 w-3.5 shrink-0 text-ignition-400" />
             {new Intl.NumberFormat("en-GB").format(vehicle.mileage)} miles
           </span>
-          <span className="flex items-center gap-1.5">
-            <Fuel className="h-3.5 w-3.5 text-ignition-400" /> {vehicle.fuelType}
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Fuel className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {vehicle.fuelType}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Cog className="h-3.5 w-3.5 text-ignition-400" /> {vehicle.transmission}
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <Cog className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {vehicle.transmission}
           </span>
-          <span className="flex items-center gap-1.5">
-            <MapPin className="h-3.5 w-3.5 text-ignition-400" /> {vehicle.location}
+          <span className="flex min-w-0 items-center gap-1.5 truncate">
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-ignition-400" /> {vehicle.location}
           </span>
         </div>
 

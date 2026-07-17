@@ -59,7 +59,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
-            <Logo />
+            <Logo className="h-14" />
             <p className="mt-5 max-w-xs font-body text-sm leading-relaxed text-steel-400">
               {business.shortDescription}
             </p>
@@ -144,7 +144,7 @@ export function Footer() {
                 <button
                   type="submit"
                   aria-label="Subscribe"
-                  className="flex items-center justify-center bg-ignition-gradient px-4 text-white"
+                  className="flex items-center justify-center bg-ignition-gradient px-4 text-navy-950"
                 >
                   <ArrowRight className="h-4 w-4" />
                 </button>

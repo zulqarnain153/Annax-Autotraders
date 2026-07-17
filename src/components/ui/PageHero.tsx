@@ -11,7 +11,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
     <section className="relative overflow-hidden bg-navy-radial pb-16 pt-36">
       <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.04]" aria-hidden="true">
         <pattern id="pagehero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8B93A6" strokeWidth="0.75" />
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#A3A3AA" strokeWidth="0.75" />
         </pattern>
         <rect width="100%" height="100%" fill="url(#pagehero-grid)" />
       </svg>
