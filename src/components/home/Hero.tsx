@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -31,47 +32,41 @@ export function Hero() {
   };
 
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy-radial pt-20">
-      {/* Ambient floodlight glows */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-ignition/20 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[460px] w-[460px] rounded-full bg-ignition/10 blur-[130px]" />
-
-      {/* Blueprint grid */}
-      <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.04]" aria-hidden="true">
-        <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#A3A3AA" strokeWidth="0.75" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#hero-grid)" />
-      </svg>
-
-      {/* Large-format gold wireframe car — an original vector "hero shot" bleeding off
-          the right edge, evoking a showroom spotlight without needing stock photography */}
-      <div
-        className="pointer-events-none absolute -right-16 bottom-0 hidden h-[62%] w-[58%] opacity-[0.16] sm:block lg:opacity-[0.22]"
-        aria-hidden="true"
-      >
-        <svg viewBox="0 0 320 160" className="h-full w-full" preserveAspectRatio="xMidYMax meet">
-          <defs>
-            <linearGradient id="hero-car-gradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#E4C567" />
-              <stop offset="100%" stopColor="#84848C" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M30 128 C30 110 45 101 68 99 L88 76 C96 68 108 64 122 64 L200 64 C212 64 222 69 229 78 L246 99 C266 102 282 111 282 128 L282 140 L30 140 Z"
-            fill="none"
-            stroke="url(#hero-car-gradient)"
-            strokeWidth="1.25"
-          />
-          <circle cx="88" cy="140" r="18" fill="none" stroke="#E4C567" strokeWidth="1.25" />
-          <circle cx="246" cy="140" r="18" fill="none" stroke="#E4C567" strokeWidth="1.25" />
-        </svg>
+    <section className="relative overflow-hidden bg-navy-950 pt-20">
+      {/*
+        Photo banner. On mobile the headline and the search widget stack
+        vertically (see grid below), which would make the combined block very
+        tall — covering a real photo behind all of that would force an extreme,
+        near-unrecognizable zoom. So on mobile the photo is a shorter, fixed
+        banner behind just the headline; the search widget sits on the
+        section's plain dark background beneath it. From lg: up, headline and
+        search widget sit side by side again, so the photo goes back to
+        filling the entire section behind both columns, matching the original
+        one-panel hero look.
+      */}
+      <div className="absolute inset-x-0 top-0 h-[58vh] min-h-[420px] lg:bottom-0 lg:h-auto">
+        <Image
+          src="/hero/range-rover-hero.jpg"
+          alt="Black Range Rover parked outside a modern architectural home at dusk"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[82%_center] sm:object-[75%_center] md:object-[68%_center] lg:object-[60%_center] xl:object-center"
+        />
+        {/* Directional scrim: strong behind the headline column, lighter over the car */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/70 to-navy-950/25" />
+        {/* Seam so the fixed-height mobile banner blends into the plain section below it */}
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-navy-950 to-transparent lg:hidden" />
       </div>
+
+      {/* Ambient gold glows, layered over the photo for warmth consistent with the brand */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-ignition/15 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[460px] w-[460px] rounded-full bg-ignition/10 blur-[130px]" />
 
       {/* Soft bottom vignette to ground the section into what follows */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-950 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-center px-4 py-16 sm:px-6 lg:min-h-[92vh] lg:px-8 lg:py-0">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <motion.div
             initial={{ opacity: 0, y: 28 }}

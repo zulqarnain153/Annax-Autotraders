@@ -69,8 +69,8 @@ export function ValuationForm({ mode }: { mode: "sell" | "part-exchange" }) {
         <label className="mb-2 block font-body text-xs uppercase tracking-wider text-steel-400">
           Registration Number
         </label>
-        <div className="flex gap-2">
-          <div className="flex flex-1 overflow-hidden rounded-plate border-2 border-navy-950 shadow-card">
+        <div className="flex flex-wrap gap-2">
+          <div className="flex min-w-[200px] flex-1 overflow-hidden rounded-plate border-2 border-navy-950 shadow-card">
             <div className="flex items-center bg-plate-band px-2">
               <span className="font-display text-xs font-bold text-plate-yellow">GB</span>
             </div>
@@ -88,7 +88,7 @@ export function ValuationForm({ mode }: { mode: "sell" | "part-exchange" }) {
             type="button"
             onClick={handleLookup}
             disabled={lookupState === "looking"}
-            className="flex items-center gap-2 rounded-xl border border-white/15 px-4 font-body text-sm text-white transition-colors hover:border-ignition disabled:opacity-60"
+            className="flex shrink-0 items-center gap-2 rounded-xl border border-white/15 px-4 py-3 font-body text-sm text-white transition-colors hover:border-ignition disabled:opacity-60"
           >
             {lookupState === "looking" ? (
               <Loader2 className="h-4 w-4 animate-spin" />

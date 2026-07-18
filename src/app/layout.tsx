@@ -3,7 +3,7 @@ import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { FloatingActionButtons } from "@/components/layout/FloatingActionButtons";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { business } from "@/lib/business";
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
-        <WhatsAppButton />
+        <FloatingActionButtons />
         <BackToTop />
         <CookieBanner />
       </body>

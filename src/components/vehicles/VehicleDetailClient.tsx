@@ -81,11 +81,24 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
         <span className="text-steel-300">{vehicle.make} {vehicle.model}</span>
       </nav>
 
-      <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-        <div>
+      {/*
+        Layout uses named grid-areas instead of relying on DOM order + lg:grid-cols.
+        WHY: previously this was a plain 2-column grid that only became 2 columns at
+        lg+; below that it silently collapsed to a single column and just followed
+        DOM order, which put the full specs block (including Fuel Type / Transmission)
+        ahead of the sidebar's quick-specs strip (which repeats Fuel Type / Transmission)
+        AND buried the title/price/CTA buttons under the entire details section on
+        mobile. Named areas let us control mobile order explicitly (gallery → sidebar →
+        details) while keeping the exact desktop layout (details left, sidebar right,
+        sticky) untouched.
+      */}
+      <div className="grid gap-10 [grid-template-areas:'gallery''sidebar''details'] lg:grid-cols-[1.4fr_1fr] lg:[grid-template-areas:'gallery_sidebar''details_sidebar']">
+        <div className="[grid-area:gallery]">
           <VehicleGallery vehicle={vehicle} />
+        </div>
 
-          <div className="mt-8">
+        <div className="[grid-area:details]">
+          <div>
             <h2 className="font-display text-xl font-bold uppercase text-white">Description</h2>
             <p className="mt-3 font-body text-sm leading-relaxed text-steel-300">
               {vehicle.description}
@@ -157,8 +170,8 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
           </div>
         </div>
 
-        {/* Sticky sidebar */}
-        <div className="lg:sticky lg:top-24 lg:h-fit">
+        {/* Sticky sidebar — shows first on mobile (title/price/CTA), right column on desktop */}
+        <div className="[grid-area:sidebar] lg:sticky lg:top-24 lg:h-fit">
           <div className="rounded-2xl border border-white/10 bg-navy-900 p-6">
             <h1 className="font-display text-2xl font-bold uppercase leading-tight text-white">
               {vehicle.make} {vehicle.model}

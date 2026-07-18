@@ -53,7 +53,7 @@ export function VehicleActionModal({ open, onClose, mode, vehicleName }: Vehicle
             transition={{ duration: 0.25 }}
             role="dialog"
             aria-modal="true"
-            className="fixed left-1/2 top-1/2 z-[70] w-[90vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/10 bg-navy-900 p-6 shadow-card"
+            className="fixed left-1/2 top-1/2 z-[70] max-h-[85vh] w-[90vw] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border border-white/10 bg-navy-900 p-6 shadow-card"
           >
             <div className="flex items-center justify-between">
               <h2 className="font-display text-lg font-bold uppercase text-white">{title}</h2>
