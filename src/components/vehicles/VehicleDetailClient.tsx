@@ -185,18 +185,18 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
               </p>
             </div>
 
-            <div className="mt-5 grid grid-cols-2 gap-3 border-y border-white/10 py-4">
-              <span className="flex items-center gap-2 font-body text-xs text-steel-400">
-                <Calendar className="h-4 w-4 text-ignition-400" /> {vehicle.year}
+            <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-3 rounded-xl bg-navy-800 p-4">
+              <span className="flex min-w-0 items-center gap-2 font-body text-xs text-steel-400">
+                <Calendar className="h-4 w-4 shrink-0 text-ignition-400" /> {vehicle.year}
               </span>
-              <span className="flex items-center gap-2 font-body text-xs text-steel-400">
-                <Gauge className="h-4 w-4 text-ignition-400" /> {formatMileage(vehicle.mileage)}
+              <span className="flex min-w-0 items-center gap-2 font-body text-xs text-steel-400">
+                <Gauge className="h-4 w-4 shrink-0 text-ignition-400" /> {formatMileage(vehicle.mileage)}
               </span>
-              <span className="flex items-center gap-2 font-body text-xs text-steel-400">
-                <Fuel className="h-4 w-4 text-ignition-400" /> {vehicle.fuelType}
+              <span className="flex min-w-0 items-center gap-2 font-body text-xs text-steel-400">
+                <Fuel className="h-4 w-4 shrink-0 text-ignition-400" /> {vehicle.fuelType}
               </span>
-              <span className="flex items-center gap-2 font-body text-xs text-steel-400">
-                <Cog className="h-4 w-4 text-ignition-400" /> {vehicle.transmission}
+              <span className="flex min-w-0 items-center gap-2 font-body text-xs text-steel-400">
+                <Cog className="h-4 w-4 shrink-0 text-ignition-400" /> {vehicle.transmission}
               </span>
             </div>
 

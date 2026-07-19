@@ -25,14 +25,14 @@ export function VehicleGallery({ vehicle }: { vehicle: Vehicle }) {
     const images = vehicle.images!;
     return (
       <div>
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-navy-900">
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-navy-900 sm:aspect-[4/3]">
           <Image
             src={images[activeIndex]}
             alt={`${vehicle.make} ${vehicle.model} — photo ${activeIndex + 1} of ${images.length}`}
             fill
             priority={activeIndex === 0}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
 
