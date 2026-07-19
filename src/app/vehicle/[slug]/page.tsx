@@ -30,7 +30,7 @@ export default async function VehicleDetailPage({ params }: { params: Params }) 
 
   return (
     <div className="min-h-screen bg-navy-950 pt-20">
-      <VehicleDetailClient vehicle={vehicle} />
+      <VehicleDetailClient key={vehicle.id} vehicle={vehicle} />
     </div>
   );
 }
