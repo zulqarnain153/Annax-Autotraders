@@ -53,8 +53,8 @@ export function WhyChooseUs() {
           {reasons.map((reason, i) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               className="group rounded-2xl border border-white/10 bg-navy-900 p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-ignition/40"

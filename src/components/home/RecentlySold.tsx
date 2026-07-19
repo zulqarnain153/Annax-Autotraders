@@ -22,8 +22,8 @@ function SoldCard({ vehicle, index }: { vehicle: SoldVehicle; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-navy-900 shadow-card"

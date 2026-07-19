@@ -27,8 +27,8 @@ export function StatCounter({ value, suffix = "", label, decimals = 0 }: StatCou
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center text-center"
     >
