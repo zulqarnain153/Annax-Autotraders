@@ -118,12 +118,12 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
                 { icon: Palette, label: "Colour", value: vehicle.colour },
                 { icon: BadgeCheck, label: "Engine", value: vehicle.engineSize },
               ].map((spec) => (
-                <div key={spec.label} className="rounded-xl border border-white/10 bg-navy-900 p-4">
+                <div key={spec.label} className="min-w-0 rounded-xl border border-white/10 bg-navy-900 p-4">
                   <spec.icon className="h-4 w-4 text-ignition-400" />
                   <p className="mt-2 font-body text-[10px] uppercase tracking-wider text-steel-500">
                     {spec.label}
                   </p>
-                  <p className="mt-0.5 font-display text-sm font-bold text-white">{spec.value}</p>
+                  <p className="mt-0.5 break-words font-display text-sm font-bold text-white">{spec.value}</p>
                 </div>
               ))}
             </div>
