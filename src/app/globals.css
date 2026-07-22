@@ -5,10 +5,26 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
     @apply bg-navy-950 font-body text-steel-300 antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+  }
+
+  /* Belt-and-suspenders: nothing on the page is allowed to force horizontal
+     scroll, whatever the cause. Intentionally horizontal-scrolling elements
+     (photo thumbnail strips, the vehicle comparison table) opt back in with
+     overflow-x-auto, which still works fine nested inside this. */
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
   }
 
   ::selection {
