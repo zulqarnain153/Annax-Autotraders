@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/Hero";
 import { FeaturedCars } from "@/components/home/FeaturedCars";
 import { LatestArrivals } from "@/components/home/LatestArrivals";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { SellYourCarTeaser } from "@/components/home/SellYourCarTeaser";
 import { PartExchangeTeaser } from "@/components/home/PartExchangeTeaser";
 import { Testimonials } from "@/components/home/Testimonials";
 import { RecentlySold } from "@/components/home/RecentlySold";
@@ -17,7 +16,6 @@ export default function HomePage() {
       <FeaturedCars />
       <LatestArrivals />
       <WhyChooseUs />
-      <SellYourCarTeaser />
       <PartExchangeTeaser />
       <Testimonials />
       <RecentlySold />

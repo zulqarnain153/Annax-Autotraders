@@ -18,10 +18,8 @@ const timeline = [
 ];
 
 const team = [
-  { name: "James Carter", role: "Founder & Managing Director" },
-  { name: "Amara Osei", role: "Sales Manager" },
-  { name: "Liam Fitzgerald", role: "Vehicle Preparation Lead" },
-  { name: "Priya Nair", role: "Finance Specialist" },
+  { name: "Umair Sarwar", role: "Founder & Managing Director" },
+  { name: "Zuhaib Alvi & Zubair Sarwar", role: "Sales Manager & Vehicle Preparation Lead" },
 ];
 
 export default function AboutPage() {
@@ -100,7 +98,7 @@ export default function AboutPage() {
       <section className="bg-navy-900 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Meet The Team" title="The People Behind Annax" light align="center" className="mx-auto" />
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-14 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
             {team.map((member) => (
               <div key={member.name} className="rounded-2xl border border-white/10 bg-navy-950 p-6 text-center">
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-ignition-gradient text-navy-950">

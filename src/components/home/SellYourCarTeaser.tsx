@@ -37,7 +37,7 @@ export function SellYourCarTeaser() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Sell With Annax"
-          title="Sell Your Car"
+          title="How We Make It Easy"
           description="Get the best market value for your vehicle with a quick, transparent, and hassle-free valuation from Annax Auto Traders."
           align="center"
           light

@@ -16,6 +16,10 @@ export const business = {
   contact: {
     phone: "+44 7440 416033",
     phoneDisplay: "07440 416033",
+    // Header-only: the navbar's new dedicated Call button uses a different
+    // number from the rest of the site's Call/WhatsApp CTAs (per request).
+    headerPhone: "+44 7308 120120",
+    headerPhoneDisplay: "07308 120120",
     whatsapp: "447440416033",
     email: "info@annaxautotraders.co.uk",
     salesEmail: "sales@annaxautotraders.co.uk",

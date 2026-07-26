@@ -3,6 +3,7 @@ import { PoundSterling, Clock, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ValuationForm } from "@/components/vehicles/ValuationForm";
+import { SellYourCarTeaser } from "@/components/home/SellYourCarTeaser";
 
 export const metadata: Metadata = {
   title: "Sell Your Car",
@@ -51,6 +52,8 @@ export default function SellYourCarPage() {
           </div>
         </div>
       </section>
+
+      <SellYourCarTeaser />
     </div>
   );
 }

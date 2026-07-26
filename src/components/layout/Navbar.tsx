@@ -21,7 +21,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const links = [
   { href: "/", label: "Home" },
   { href: "/stock", label: "Stock" },
-  { href: "/finance", label: "Finance" },
+  { href: "/sell-your-car", label: "Sell Your Car" },
   { href: "/part-exchange", label: "Part Exchange" },
   { href: "/about", label: "About Us" },
   { href: "/reviews", label: "Reviews" },
@@ -59,9 +59,9 @@ export function Navbar() {
           : "bg-gradient-to-b from-navy-950/70 to-transparent"
       )}
     >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link href="/" aria-label="Annax Auto Traders home" className="shrink-0">
-          <Logo />
+          <Logo size="large" />
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
@@ -115,30 +115,52 @@ export function Navbar() {
             )}
           </Link>
 
-          {/* WhatsApp — icon only, visible at every breakpoint */}
-          <a
-            href={`https://wa.me/${business.contact.whatsapp}?text=${whatsappMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat with us on WhatsApp"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-[#25D366] transition-colors hover:bg-[#25D366]/10"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-          </a>
+          {/* Call and WhatsApp — a matching pair. Icon-only circles below md
+              (keeps the header from crowding on phones/small tablets), full
+              icon+number pills from md up. Both use the same Button size/
+              variant so they render at identical height and weight; the two
+              numbers are the same character length so the pills match width
+              too. */}
+          <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
+            <a
+              href={`tel:${business.contact.headerPhone}`}
+              aria-label={`Call us on ${business.contact.headerPhoneDisplay}`}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition-colors duration-200 hover:border-ignition hover:text-ignition-400 md:hidden"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
+            <a href={`tel:${business.contact.headerPhone}`} className="hidden md:block">
+              <Button variant="outline" size="sm" icon={Phone}>
+                {business.contact.headerPhoneDisplay}
+              </Button>
+            </a>
 
-          {/* Phone — icon only below md, icon + number pill from md up */}
-          <a
-            href={`tel:${business.contact.phone}`}
-            aria-label={`Call us on ${business.contact.phoneDisplay}`}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-ignition hover:text-ignition-400 md:hidden"
-          >
-            <Phone className="h-5 w-5" />
-          </a>
-          <a href={`tel:${business.contact.phone}`} className="hidden md:block">
-            <Button variant="outline" size="sm" icon={Phone}>
-              {business.contact.phoneDisplay}
-            </Button>
-          </a>
+            <a
+              href={`https://wa.me/${business.contact.whatsapp}?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Chat with us on WhatsApp: ${business.contact.phoneDisplay}`}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#25D366]/40 text-[#25D366] transition-colors duration-200 hover:border-[#25D366] hover:bg-[#25D366]/10 md:hidden"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={`https://wa.me/${business.contact.whatsapp}?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:block"
+            >
+              <span
+                className={cn(
+                  "group inline-flex items-center justify-center gap-2 rounded-full border-2 px-4 py-2 font-display text-sm font-semibold uppercase tracking-wide transition-all duration-300 ease-out",
+                  "border-[#25D366]/50 text-[#25D366] backdrop-blur-sm hover:-translate-y-0.5 hover:border-[#25D366] hover:bg-[#25D366]/10"
+                )}
+              >
+                <WhatsAppIcon className="h-[1.1em] w-[1.1em] shrink-0" />
+                {business.contact.phoneDisplay}
+              </span>
+            </a>
+          </div>
 
           <button
             onClick={() => setMobileOpen((v) => !v)}
