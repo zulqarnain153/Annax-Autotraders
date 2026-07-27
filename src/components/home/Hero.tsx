@@ -74,7 +74,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-body text-xs font-medium uppercase tracking-widest text-steel-300">
-              Staines-upon-Thames · Est. 2016
+              Staines-upon-Thames
             </span>
             <h1 className="font-display text-5xl font-bold uppercase leading-[0.95] text-white sm:text-6xl md:text-7xl">
               Quality Cars,
