@@ -14,27 +14,23 @@ export const business = {
   founded: 2016,
 
   contact: {
-    phone: "+44 7440 416033",
-    phoneDisplay: "07440 416033",
-    // Header-only: the navbar's new dedicated Call button uses a different
-    // number from the rest of the site's Call/WhatsApp CTAs (per request).
-    headerPhone: "+44 7308 120120",
-    headerPhoneDisplay: "07308 120120",
-    whatsapp: "447440416033",
+    phone: "+44 7846 025485",
+    phoneDisplay: "07846 025485",
+    whatsapp: "447846025485",
     email: "info@annaxautotraders.co.uk",
     salesEmail: "sales@annaxautotraders.co.uk",
   },
 
   address: {
-    line1: "12 Kingston Road",
-    line2: "Staines-upon-Thames",
+    line1: "77 Ouseley Road",
+    line2: "Wraysbury",
     city: "Staines-upon-Thames",
-    county: "Surrey",
-    postcode: "TW18 4LH",
+    county: "Windsor and Maidenhead",
+    postcode: "TW19 5JJ",
     country: "United Kingdom",
-    full: "12 Kingston Road, Staines-upon-Thames, Surrey, TW18 4LH",
-    lat: 51.4335,
-    lng: -0.5136,
+    full: "77 Ouseley Road, Wraysbury, Staines-upon-Thames, TW19 5JJ, UK",
+    lat: 51.4536,
+    lng: -0.5695,
   },
 
   hours: [
