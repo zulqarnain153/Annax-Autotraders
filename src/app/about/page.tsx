@@ -10,13 +10,6 @@ export const metadata: Metadata = {
     "Learn the story behind Annax Auto Traders — a boutique used car dealership in Staines-upon-Thames built on trust and honesty.",
 };
 
-const timeline = [
-  { year: "2016", title: "Annax Founded", description: "Opened our first small forecourt in Staines-upon-Thames with just six cars." },
-  { year: "2019", title: "New Premises", description: "Moved to a larger site to accommodate growing stock and customer demand." },
-  { year: "2022", title: "1,000th Car Sold", description: "Celebrated a major milestone built entirely on referrals and repeat customers." },
-  { year: "2026", title: "Today", description: "A trusted independent dealer with a 4.9-star reputation and a loyal local following." },
-];
-
 const team = [
   { name: "Umair Sarwar", role: "Founder & Managing Director" },
   { name: "Zuhaib Alvi & Zubair Sarwar", role: "Sales Manager & Vehicle Preparation Lead" },
@@ -71,26 +64,6 @@ export default function AboutPage() {
                 honesty as for the quality of cars on our forecourt.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Our Journey" title="Timeline" light align="center" className="mx-auto" />
-          <div className="mt-14 space-y-10 border-l-2 border-white/10 pl-8">
-            {timeline.map((item) => (
-              <div key={item.year} className="relative">
-                <span className="absolute -left-[38px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-ignition-gradient shadow-glow" />
-                <span className="font-display text-sm font-bold uppercase tracking-wider text-ignition-400">
-                  {item.year}
-                </span>
-                <h3 className="mt-1 font-display text-xl font-bold uppercase text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-1 font-body text-sm text-steel-400">{item.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
