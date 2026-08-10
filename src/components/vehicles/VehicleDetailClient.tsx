@@ -73,12 +73,12 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(vehicleSchema) }}
       />
 
-      <nav className="mb-6 flex items-center gap-1.5 font-body text-xs text-steel-500">
-        <Link href="/" className="hover:text-ignition-400">Home</Link>
-        <ChevronRight className="h-3 w-3" />
-        <Link href="/stock" className="hover:text-ignition-400">Stock</Link>
-        <ChevronRight className="h-3 w-3" />
-        <span className="text-steel-300">{vehicle.make} {vehicle.model}</span>
+      <nav className="mb-6 flex min-w-0 items-center gap-1.5 font-body text-xs text-steel-500">
+        <Link href="/" className="shrink-0 hover:text-ignition-400">Home</Link>
+        <ChevronRight className="h-3 w-3 shrink-0" />
+        <Link href="/stock" className="shrink-0 hover:text-ignition-400">Stock</Link>
+        <ChevronRight className="h-3 w-3 shrink-0" />
+        <span className="min-w-0 truncate text-steel-300">{vehicle.make} {vehicle.model}</span>
       </nav>
 
       {/*
@@ -93,11 +93,11 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
         sticky) untouched.
       */}
       <div className="grid gap-10 [grid-template-areas:'gallery''sidebar''details'] lg:grid-cols-[1.4fr_1fr] lg:[grid-template-areas:'gallery_sidebar''details_sidebar']">
-        <div className="[grid-area:gallery]">
+        <div className="min-w-0 [grid-area:gallery]">
           <VehicleGallery vehicle={vehicle} />
         </div>
 
-        <div className="[grid-area:details]">
+        <div className="min-w-0 [grid-area:details]">
           <div>
             <h2 className="font-display text-xl font-bold uppercase text-white">Description</h2>
             <p className="mt-3 font-body text-sm leading-relaxed text-steel-300">
@@ -133,9 +133,9 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
             <h2 className="font-display text-xl font-bold uppercase text-white">Features</h2>
             <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {vehicle.features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2.5 font-body text-sm text-steel-300">
-                  <BadgeCheck className="h-4 w-4 shrink-0 text-ignition-400" />
-                  {feature}
+                <div key={feature} className="flex min-w-0 items-start gap-2.5 font-body text-sm text-steel-300">
+                  <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-ignition-400" />
+                  <span className="min-w-0 flex-1 break-words">{feature}</span>
                 </div>
               ))}
             </div>
@@ -147,21 +147,21 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
             </h2>
             <div className="mt-4 space-y-3">
               {vehicle.history.map((item) => (
-                <div key={item.label} className="flex gap-3 rounded-xl border border-white/10 bg-navy-900 p-4">
+                <div key={item.label} className="flex min-w-0 gap-3 rounded-xl border border-white/10 bg-navy-900 p-4">
                   <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-ignition-400" />
-                  <div>
-                    <p className="font-display text-sm font-bold uppercase text-white">{item.label}</p>
-                    <p className="font-body text-sm text-steel-400">{item.detail}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="break-words font-display text-sm font-bold uppercase text-white">{item.label}</p>
+                    <p className="break-words font-body text-sm text-steel-400">{item.detail}</p>
                   </div>
                 </div>
               ))}
-              <div className="flex gap-3 rounded-xl border border-white/10 bg-navy-900 p-4">
+              <div className="flex min-w-0 gap-3 rounded-xl border border-white/10 bg-navy-900 p-4">
                 <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-ignition-400" />
-                <div>
-                  <p className="font-display text-sm font-bold uppercase text-white">
+                <div className="min-w-0 flex-1">
+                  <p className="break-words font-display text-sm font-bold uppercase text-white">
                     MOT Status: {vehicle.mot.status}
                   </p>
-                  <p className="font-body text-sm text-steel-400">
+                  <p className="break-words font-body text-sm text-steel-400">
                     Expires {formatDate(vehicle.mot.expiry)}
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
         </div>
 
         {/* Sticky sidebar — shows first on mobile (title/price/CTA), right column on desktop */}
-        <div className="[grid-area:sidebar] lg:sticky lg:top-24 lg:h-fit">
+        <div className="min-w-0 [grid-area:sidebar] lg:sticky lg:top-24 lg:h-fit">
           <div className="rounded-2xl border border-white/10 bg-navy-900 p-6">
             <h1 className="font-display text-2xl font-bold uppercase leading-tight text-white">
               {vehicle.make} {vehicle.model}
