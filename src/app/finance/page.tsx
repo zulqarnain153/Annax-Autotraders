@@ -94,7 +94,7 @@ export default function FinancePage() {
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => (
               <div key={step.title} className="relative rounded-2xl border border-white/10 bg-navy-900 p-6">
-                <span className="font-display text-5xl font-bold text-white/5">{i + 1}</span>
+                <span className="font-display text-5xl font-bold text-ignition-400">{i + 1}</span>
                 <step.icon className="absolute right-6 top-6 h-6 w-6 text-ignition-400" />
                 <h3 className="mt-2 font-display text-base font-bold uppercase text-white">{step.title}</h3>
                 <p className="mt-2 font-body text-sm text-steel-400">{step.description}</p>
