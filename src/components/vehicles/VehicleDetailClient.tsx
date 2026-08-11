@@ -15,6 +15,15 @@ import {
   Palette,
   ShieldCheck,
   ChevronRight,
+  Zap,
+  CircleDot,
+  Wind,
+  Rocket,
+  Droplet,
+  Layers,
+  Car,
+  Leaf,
+  CheckCircle2,
 } from "lucide-react";
 import { Vehicle } from "@/lib/types";
 import { PlateBadge } from "@/components/ui/PlateBadge";
@@ -117,6 +126,19 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
                 { icon: Users, label: "Seats", value: vehicle.seats },
                 { icon: Palette, label: "Colour", value: vehicle.colour },
                 { icon: BadgeCheck, label: "Engine", value: vehicle.engineSize },
+                ...(vehicle.power ? [{ icon: Zap, label: "Power", value: vehicle.power }] : []),
+                ...(vehicle.cylinders ? [{ icon: CircleDot, label: "Cylinders", value: vehicle.cylinders }] : []),
+                ...(vehicle.engineType ? [{ icon: Wind, label: "Engine Type", value: vehicle.engineType }] : []),
+                ...(vehicle.topSpeed ? [{ icon: Rocket, label: "Top Speed", value: vehicle.topSpeed }] : []),
+                ...(vehicle.fuelTankCapacity
+                  ? [{ icon: Droplet, label: "Fuel Tank Capacity", value: vehicle.fuelTankCapacity }]
+                  : []),
+                ...(vehicle.valvesPerCylinder
+                  ? [{ icon: Layers, label: "Valves per Cylinder", value: vehicle.valvesPerCylinder }]
+                  : []),
+                ...(vehicle.power ? [{ icon: Car, label: "Body Style", value: `${vehicle.doors} Door ${vehicle.bodyType}` }] : []),
+                ...(vehicle.euroStatus ? [{ icon: Leaf, label: "Euro Status", value: vehicle.euroStatus }] : []),
+                ...(vehicle.power ? [{ icon: CheckCircle2, label: "ULEZ Compliant", value: vehicle.ulez ? "Yes" : "No" }] : []),
               ].map((spec) => (
                 <div key={spec.label} className="min-w-0 rounded-xl border border-white/10 bg-navy-900 p-4">
                   <spec.icon className="h-4 w-4 text-ignition-400" />
