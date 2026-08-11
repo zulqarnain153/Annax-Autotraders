@@ -45,6 +45,16 @@ export interface Vehicle {
   /** Optional real photos, e.g. ["/vehicles/bmw-3-series-2022/1-front.jpg", ...].
    *  When present, these are shown instead of the generated silhouette. */
   images?: string[];
+  /** Optional extended specification fields. When present, the vehicle detail
+   *  page's Specifications grid shows these alongside the standard 8 items.
+   *  Vehicles without these fields show exactly the same 8 items as before. */
+  power?: string;
+  cylinders?: number;
+  engineType?: string;
+  topSpeed?: string;
+  fuelTankCapacity?: string;
+  valvesPerCylinder?: number;
+  euroStatus?: string;
   createdAt: string;
 }
 
