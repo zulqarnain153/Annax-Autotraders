@@ -42,6 +42,7 @@ export const vehicles: Vehicle[] = [
     ],
     silhouetteSeed: 2,
     createdAt: "2026-06-20",
+    images: ["/vehicles/shared/new-arrival-coming-soon.png"],
   },
   {
     id: "v3",
@@ -144,6 +145,7 @@ export const vehicles: Vehicle[] = [
     ],
     silhouetteSeed: 4,
     createdAt: "2026-06-02",
+    images: ["/vehicles/shared/new-arrival-coming-soon.png"],
   },
   {
     id: "v8",
