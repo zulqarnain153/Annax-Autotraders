@@ -36,21 +36,23 @@ export function VehicleGallery({ vehicle }: { vehicle: Vehicle }) {
           />
         </div>
 
-        <div className="mt-4 flex gap-2 overflow-x-auto">
-          {images.map((src, i) => (
-            <button
-              key={src}
-              onClick={() => setActiveIndex(i)}
-              aria-label={`View photo ${i + 1}`}
-              className={cn(
-                "relative aspect-[4/3] w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-colors",
-                activeIndex === i ? "border-ignition" : "border-white/10 opacity-60 hover:opacity-100"
-              )}
-            >
-              <Image src={src} alt="" fill sizes="80px" className="object-cover" loading="lazy" />
-            </button>
-          ))}
-        </div>
+        {images.length > 1 && (
+          <div className="mt-4 flex gap-2 overflow-x-auto">
+            {images.map((src, i) => (
+              <button
+                key={src}
+                onClick={() => setActiveIndex(i)}
+                aria-label={`View photo ${i + 1}`}
+                className={cn(
+                  "relative aspect-[4/3] w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-colors",
+                  activeIndex === i ? "border-ignition" : "border-white/10 opacity-60 hover:opacity-100"
+                )}
+              >
+                <Image src={src} alt="" fill sizes="80px" className="object-cover" loading="lazy" />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
