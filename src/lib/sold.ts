@@ -46,4 +46,33 @@ export const soldVehicles: SoldVehicle[] = [
       "/sold/vauxhall-insignia-2017/3-sold-stamp.jpg",
     ],
   },
+  {
+    id: "sold-2",
+    make: "BMW",
+    model: "3 Series",
+    variant: "320i M Sport",
+    year: 2008,
+    mileage: 100928,
+    fuelType: "Petrol",
+    transmission: "6-Speed Automatic",
+    bhp: 168,
+    highlights: [
+      "1 Owner From New",
+      "M Sport Estate",
+      "Euro 4 / ULEZ Compliant",
+      "168 BHP Petrol",
+    ],
+    description:
+      "A practical, well-equipped M Sport Touring with BMW's smooth 168bhp 2.0-litre petrol engine and 6-speed automatic gearbox — a genuine one-owner example with 100,928 miles on the clock.",
+    location: "Staines-upon-Thames, TW18",
+    images: [
+      "/sold/bmw-320i-m-sport-2008/1-front.jpg",
+      "/sold/bmw-320i-m-sport-2008/2-front-three-quarter.jpg",
+      "/sold/bmw-320i-m-sport-2008/3-front-three-quarter-alt.jpg",
+      "/sold/bmw-320i-m-sport-2008/4-rear-three-quarter.jpg",
+      "/sold/bmw-320i-m-sport-2008/5-interior-detail.jpg",
+      "/sold/bmw-320i-m-sport-2008/6-interior-dash.jpg",
+      "/sold/bmw-320i-m-sport-2008/7-handover.jpg",
+    ],
+  },
 ];
