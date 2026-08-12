@@ -39,7 +39,7 @@ function SoldCard({ vehicle, index }: { vehicle: SoldVehicle; index: number }) {
         />
 
         {slide === 0 && (
-          <span className="absolute left-3 top-3 rounded-full bg-ignition-gradient px-4 py-1.5 font-display text-sm font-bold uppercase tracking-wide text-red-700 shadow-glow">
+          <span className="absolute left-3 top-3 rounded-full bg-ignition-gradient px-5 py-2 font-display text-lg font-bold uppercase tracking-wide text-red-700 shadow-glow">
             Sold
           </span>
         )}
