@@ -38,9 +38,11 @@ function SoldCard({ vehicle, index }: { vehicle: SoldVehicle; index: number }) {
           priority={index === 0}
         />
 
-        <span className="absolute left-3 top-3 rounded-full bg-navy-950/90 px-3 py-1 font-display text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
-          Sold
-        </span>
+        {slide === 0 && (
+          <span className="absolute left-3 top-3 rounded-full bg-ignition-gradient px-4 py-1.5 font-display text-sm font-bold uppercase tracking-wide text-red-700 shadow-glow">
+            Sold
+          </span>
+        )}
 
         {vehicle.images.length > 1 && (
           <>
