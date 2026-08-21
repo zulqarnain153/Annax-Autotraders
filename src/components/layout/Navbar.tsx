@@ -18,7 +18,6 @@ const links = [
   { href: "/sell-your-car", label: "Sell Your Car" },
   { href: "/part-exchange", label: "Part Exchange" },
   { href: "/about", label: "About Us" },
-  { href: "/reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },
 ];
 
