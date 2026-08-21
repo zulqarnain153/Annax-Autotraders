@@ -1,4 +1,4 @@
-import { Vehicle, Review, NewsArticle } from "./types";
+import { Vehicle, NewsArticle } from "./types";
 
 export const vehicles: Vehicle[] = [
   {
@@ -260,57 +260,6 @@ export const vehicles: Vehicle[] = [
     ],
     silhouetteSeed: 11,
     createdAt: "2026-06-15",
-  },
-];
-
-export const reviews: Review[] = [
-  {
-    id: "r1",
-    name: "Daniel Whitmore",
-    rating: 5,
-    date: "2026-06-28",
-    vehicle: "BMW 3 Series",
-    text: "Genuinely the easiest car purchase I've made. No pressure, straight answers, and the car was exactly as described. Would go back in a heartbeat.",
-  },
-  {
-    id: "r2",
-    name: "Priya Anand",
-    rating: 5,
-    date: "2026-06-19",
-    vehicle: "Audi Q5",
-    text: "Part-exchanged my old car and the valuation was fair from the start. The whole process took under an hour on collection day.",
-  },
-  {
-    id: "r3",
-    name: "Callum Reid",
-    rating: 5,
-    date: "2026-06-02",
-    vehicle: "Tesla Model 3",
-    text: "First time buying an EV and the team talked me through everything, charging included. Car has been faultless since.",
-  },
-  {
-    id: "r4",
-    name: "Harriet Osei",
-    rating: 4,
-    date: "2026-05-21",
-    vehicle: "MINI Cooper",
-    text: "Lovely little car, exactly as pictured. Only reason for 4 stars is I had to wait a few extra days for the service history paperwork.",
-  },
-  {
-    id: "r5",
-    name: "Mohammed Iqbal",
-    rating: 5,
-    date: "2026-05-10",
-    vehicle: "Skoda Octavia",
-    text: "Finance was sorted same day, monthly payment matched the online calculator exactly. No surprises, no hidden fees.",
-  },
-  {
-    id: "r6",
-    name: "Sophie Vance",
-    rating: 5,
-    date: "2026-04-27",
-    vehicle: "Mercedes A-Class",
-    text: "Second car I've bought from Annax now. Consistently honest about mileage, condition, and history. That trust is worth a lot.",
   },
 ];
 
