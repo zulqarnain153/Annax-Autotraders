@@ -20,7 +20,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-navy-950">
       <PageHero
         eyebrow="About Us"
-        title="Driven By Trust Since 2016"
+        title="A Trusted Name You Can Rely On"
         description={business.shortDescription}
       />
 
