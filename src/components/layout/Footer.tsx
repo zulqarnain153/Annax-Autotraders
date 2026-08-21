@@ -36,7 +36,6 @@ const sitemap = [
     heading: "Company",
     links: [
       { href: "/about", label: "About Us" },
-      { href: "/reviews", label: "Reviews" },
       { href: "/faq", label: "FAQ" },
       { href: "/contact", label: "Contact" },
     ],
