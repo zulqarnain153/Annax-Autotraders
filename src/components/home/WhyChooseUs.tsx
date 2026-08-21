@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, BadgePoundSterling, Wrench, Clock, Award, Handshake } from "lucide-react";
+import { ShieldCheck, BadgePoundSterling, Wrench, Clock, Handshake } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const reasons = [
@@ -29,11 +29,6 @@ const reasons = [
     icon: Clock,
     title: "Fast Finance Decisions",
     description: "Same-day finance approval from our panel of FCA-regulated lenders.",
-  },
-  {
-    icon: Award,
-    title: "9 Years Trading",
-    description: "A trusted name in Surrey with over a thousand happy customers.",
   },
 ];
 
