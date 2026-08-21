@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sell-your-car",
     "/part-exchange",
     "/about",
-    "/reviews",
     "/faq",
     "/contact",
   ].map((route) => ({
