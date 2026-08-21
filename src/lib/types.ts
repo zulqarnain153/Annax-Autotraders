@@ -58,15 +58,6 @@ export interface Vehicle {
   createdAt: string;
 }
 
-export interface Review {
-  id: string;
-  name: string;
-  rating: number;
-  date: string;
-  vehicle?: string;
-  text: string;
-}
-
 export interface NewsArticle {
   id: string;
   slug: string;
